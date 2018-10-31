@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="stylesheet" href="animate.css">
+    
+    <title>Feedback</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  	<link rel="stylesheet" href="/stylesheets/fonts/IndieFlower.ttf">
+	<link rel="stylesheet" href="/stylesheets/fonts/sed.ttf">
+	<link rel="stylesheet" href="/stylesheets/fonts/Montserrat.ttf">
+    <link rel="stylesheet" href="/stylesheets/feedback_div.css">
+    <script src="/javascripts/jquery.min.js"></script>
+    <link rel='icon' type='text/icon' href='/images/icon.png'>
+    <link rel="stylesheet" href="/stylesheets/animate.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <style type="text/css">
+      body {
+        background: url("/stylesheets/back.png");
+      }
+      *{margin:0px;padding:0px;}
+      #suggestPost
+      {
+        background:transparent url("/images/suggest-post.png") no-repeat scroll 0px 0px;
+        height:170px;
+        left:0;
+        position:fixed;
+        top:150px;
+        width:40px;
+      }
+      div#suggestPost:hover
+      {
+        background-position:-41px 0px;
+      }
+      #suggestPost a
+      {
+        display:block;
+        height:170px;
+        width:40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="suggestPost"><a href="#"></a></div>
+    <!-- <button type="button" id="close">Close</button> -->
+  
+    <div class="container animated slideInLeft" id="container">
+      <button id="closeButton" type="button" class="btn btn-default btn-circle" style="float:right; margin-right: 5px; margin-top:30px;"><i class="fa fa-times"></i></button>
+      <h1>Feedback</h1>
+      <h2>We value your opinion!</h2>
+      <hr>
+      <form class="form" action="" method="POST" accept-charset="utf-8">
+        <section id="firstSection">
+          <div class="form-group">
+            First Name: <input type="text" placeholder="First Name" class="form-control" name="firstName" pattern="^[A-Za-z]+$" required>
+          </div>
+          <div class="form-group">
+            Last Name: <input type="text" pattern="^[A-Za-z]+$" placeholder="Last Name" class="form-control" name="lastName">    
+          </div>
+          <div class="form-group">
+            E-Mail: <input type="email" placeholder="E-Mail" class="form-control" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="email" required>   
+          </div>
+
+          <div class="form-group">
+            Phone: <input type="text" placeholder="10-Digit Phone Number" pattern="^[0-9]{10}$" class="form-control" name="phone">
+          </div>
+        </section>  
+        <section id="secondSection">
+          <div class="form-group">
+          Category:   <select name="category" class="form-control">
+                <option value="compliment" selected>Compliment</option>
+                <option value="suggestion">Suggestion</option>
+                <option value="bug">Bug</option>
+                <option value="complaint">Complaint</option>
+              </select>   
+          </div>
+          <div class="form-group">
+            Sub-Category:   <select name="subCategory" class="form-control">
+                  <option value="UI">UI/UX</option>
+                  <option value="usability">Usability</option>
+                  <option value="server">Server</option>
+                  <option value="incorrectData">Incorrect Data</option>
+                  </select>   
+          </div>
+
+          <div class="form-group">
+            Comments: <br><textarea cols="50" rows="10" class="form-control"></textarea>    
+          </div>
+        </section>
+  
+  <div class="form-group">
+    <input type="submit" id="submit" class="form-control" value="Submit">
+  </div>
+</form>
+</div>
+    <script type="text/javascript" charset="utf-8" async defer>
+      var verticalButton = document.getElementById("suggestPost");
+      var container = document.getElementById("container");
+      var divDisplay = true;
+      verticalButton.addEventListener("click", function(){
+        if(divDisplay){
+          container.style.display = "block";
+          container.classList.remove("bounceOutLeft");
+          container.classList.remove("rollOut");
+          container.classList.add("slideInLeft");
+        }
+        else{
+          container.classList.remove("slideInLeft");
+          container.classList.add("bounceOutLeft");
+        }
+        divDisplay = !divDisplay;
+      });      
+      var closeButton = document.getElementById("closeButton");
+      closeButton.addEventListener("click", function(){
+        container.classList.remove("slideInLeft");
+        container.classList.add("rollOut");
+        divDisplay = !divDisplay;
+      })
+      var submit = document.getElementById("submit");
+
+      </script>
+      <script type="text/javascript" async="async" defer="defer" data-cfasync="false" src="https://mylivechat.com/chatinline.aspx?hccid=71098207"></script>
+  </body>
+</html>

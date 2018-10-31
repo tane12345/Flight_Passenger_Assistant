@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title><%=cabs.length%> Found</title>
+ 	<meta charset="utf-8">
+ 	<!-- <meta http-equiv="refresh" content="2"> -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<link rel='icon' type='text/icon' href='/images/icon.png'>
+</head>
+<body>
+	<nav class='navbar navbar-inverse' style='margin-bottom: 0px;border-radius: 0'>
+		<div class="container-fluid">
+			<div class='navbar-header'>
+				<a href='#' class='navbar-brand active'>FlightPassengerAssistant</a>
+				<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbar'>
+					<span class='icon-bar'></span>
+					<span class='icon-bar'></span>
+					<span class='icon-bar'></span>
+				</button>
+			</div>
+			<div class='collapse navbar-collapse' id='navbar'>
+				<ul class='nav navbar-nav navbar-right'>
+					<li><a href="/cab">Back</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="jumbotron">
+		<center><h1>Cabs available are</h1></center><br>
+		<center><%-messages()%></center>
+	</div>
+
+	<%if(condition=="find"){%>
+		<div class="container">
+			<%if(cabs!==undefined){%>
+				<%cabs.forEach(function(cab){%>
+					<div class="row" style="margin-top: 30px;padding:30px;background-color: #EEEEEE;color:black;;margin-bottom: 10px;border:2px solid black">
+						<div class="col-sm-2"></div>
+						<div class="col-sm-8">
+							<center>
+								<h2> <div class='pull-left'> <b>Name:</b> <%=cab.name%></div>  <div class="pull-right"><b>Contact:</b> <%=cab.phone%></div></h2><br><br>
+								<h3><b>From:</b> <%=cab.from%></h3>
+								<h3><b>To:</b> <%=cab.to%></h3>
+								<h3><b>No of Seats available:</b> <%=cab.nos%></h3>
+								<h4><b>Car:</b> <%=cab.car%></h3>
+							</center>
+						</div>
+						<div class="col-sm-2"></div>
+					</div>
+				<%});%>
+			<%}%>
+		</div>
+	<%}%>
+
+	<%if(condition=="get"){%>
+		<div class="container">
+			<%if(cabs!==undefined){%>
+				<%cabs.forEach(function(cab){%>
+					<div class="row" style="margin-top: 30px;padding:30px;background-color: #EEEEEE;color:black;;margin-bottom: 10px;border:2px solid black">
+						<div class="col-sm-2"></div>
+						<div class="col-sm-8">
+							<center>
+								<h2> <div class='pull-left'> <b>Name:</b> <%=cab.name%></div>  <div class="pull-right"><b>Contact:</b> <%=cab.phone%></div></h2><br><br>
+								<h3><b>From:</b> <%=cab.from%></h3>
+								<h3><b>To:</b> <%=cab.to%></h3>
+								<h3><b>No of seats required:</b> <%=cab.nop%></h3>
+							</center>
+						</div>
+						<div class="col-sm-2"></div>
+					</div>
+				<%});%>
+			<%}%>
+		</div>
+	<%}%>
+
+	
+	
+	
+	
+</body>
+</html>

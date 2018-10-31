@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>SEARCH FLIGHTS</title>
+ 	<meta charset="utf-8">
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/stylesheets/flight.css">
+  	<link rel="stylesheet" href="/stylesheets/fonts/IndieFlower.ttf">
+	<link rel="stylesheet" href="/stylesheets/fonts/sed.ttf">
+	<link rel="stylesheet" href="/stylesheets/fonts/Montserrat.ttf">
+
+  	<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  	<script src="/javascripts/jquery.min.js"></script>
+  	<script src="/javascripts/bootstrap.min.js"></script>
+  	<link rel='icon' type='text/icon' href='/images/icon.png'>
+</head>
+<body>
+	<nav class='navbar navbar-inverse' style='margin-bottom: 0px;border-radius: 0'>
+		<div class="container-fluid">
+			<div class='navbar-header'>
+				<a href='#' class='navbar-brand active'><i class="fa fa-fighter-jet"></i>
+FlightPassengerAssistant</a>
+				<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbar'>
+					<span class='icon-bar'></span>
+					<span class='icon-bar'></span>
+					<span class='icon-bar'></span>
+				</button>
+			</div>
+			<div class='collapse navbar-collapse' id='navbar'>
+				<ul class='nav navbar-nav navbar-right'>
+					<li><a href="/signup">Signup</a></li>
+					<li><a href="/login">Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="jumbotron" id="jumbo">
+		<center><h1>Enter Flight Details</h1></center><br>
+			<center><%-messages()%></center>
+</div>
+<!-- 	<img class="gif" src="gifs/giphy.gif">
+ -->	<div class="container" id="central">
+		<div class='col-sm-3'></div>
+		<div class='col-sm-6'>
+			<form method='post' action='/flight/search'>
+				<div class='form-group'>
+					<label for='flight_code'>Flight Code</label>
+					<select name="flight_code" class='form-control' required>
+						<option value='9W'>Jet Airways</option>
+						<option value='6E'>Indigo</option>
+						<option value='AI'>Air India</option>
+					</select>
+				</div>
+
+				<div class='form-group'>date
+					<label for='flight_number'>Flight Number</label>
+					<input type="number" name="flight_number" class='form-control' required>
+				</div>
+				<div class='form-group'>
+					<label for='year'>Year Of Departure(YYYY)</label>
+					<input type="number" name="year" class='form-control' required>
+				</div>
+				<div class='form-group'>
+					<label for='month'>Month Of Departure(MM)</label>
+					<input type="number" name="month" class='form-control' required>
+				</div>
+				<div class='form-group'>
+					<label for='day'>Day of Departure(DD)</label>
+					<input type="number" name="day" class='form-control' required>
+				</div>
+				<div class='form-group'>
+					<label for='from'>Departure Airport</label>
+					<input type="text" id='from' name="from" class='form-control' required>
+				</div>
+				<br>
+				<center>
+					<div class='form-group' style='width:100px'>
+						<input type="submit" value='SEARCH' class='form-control btn-success'>
+					</div>
+				</center>
+			</form>
+		</div>
+		<div class='col-sm-3'></div>
+	</div>
+
+
+<script type="text/javascript" async="async" defer="defer" data-cfasync="false" src="https://mylivechat.com/chatinline.aspx?hccid=71098207"></script>
+
+<script type="text/javascript">
+	function initMap(){
+		var autocomplete1=new google.maps.places.Autocomplete(document.getElementById('from'));
+	}
+	
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPPARKqgMButu_uZBypCGyIxImtnQBFDw&callback=initMap&libraries=places">
+    </script>
+</body>
+</html>

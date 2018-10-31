@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>FlightPassengerAssistant</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  	<script src="/javascripts/jquery.min.css"></script>
+  	<script src="/javascripts/bootstrap.min.css"></script>
+  	<link rel='icon' type='text/icon' href='/images/a.png'>
+  	<link rel="stylesheet" href="/stylesheets/animate.css">
+  	<link rel='icon' type='text/icon' href='icon.png'>
+  	<style>
+  	.affix {
+      	top: 0;
+      	width: 100%;
+  	}
+  	.affix + .container-fluid {
+      	padding-top: 700px;
+  	}
+  </style>
+</head>
+<body>
+
+	<div class='container-fluid' style="background-image:url('/images/f3.png');height:700px;">
+		<h1 style="margin-top:315px;margin-bottom:300px;color:#e3a712;font-size:50px;font-family:OCR A Std, monospace;" >Flight <br> Passenger </br> Assistant</h1>
+	</div>
+
+	<nav class='navbar navbar-inverse' style='margin-bottom: 0px;border-radius: 0' data-spy="affix" data-offset-top="700">
+		<div class="container-fluid">
+			<div class='navbar-header'>
+				<a href='#' class='navbar-brand active'>FlightPassengerAssistant</a>
+				<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbar'>
+					<span class='icon-bar'></span>
+					<span class='icon-bar'></span>
+					<span class='icon-bar'></span>
+				</button>
+			</div>
+			<div class='collapse navbar-collapse' id='navbar'>
+				<ul class='nav navbar-nav navbar-right'>
+				        <%if(user==undefined||user==null){%>
+						<li><a href="/signup">Signup</a></li>
+						<li><a href="/login">Login</a></li>
+					<%}%>
+					<%if (user!=undefined){%>
+						<li><a href="/history">Your Flights</a></li>
+						<li><a href="/cab">Need a Cab?</a></li>
+						<li><a href="/logout">Logout</a></li>
+					<%}%>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="jumbotron" style="background-color:#443B4C;margin:bottom:0px;" >
+		<br>
+		<center>
+			<h1 style="color:#fbcf91">We help you during your flight journey</h1><br>
+			<a href="/flight" class='btn btn-success btn-lg'>SEARCH FLIGHTS >></a>
+			<br><br>
+			<h3><q style="font-family:Caflisch Script Pro, cursive;color:#fbcf91">We believe Life is Short and World is Wide</q></h3>
+		</center>
+	</div>
+	<div class="container-fluid" style="margin:0px;height:500px;background-color:#d49e99" >
+	<div class='col-sm-4' style="height:400px;">
+	    <center>
+		<h2>Who we are</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+		Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+		Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class='col-sm-4' style="height:400px;">
+	    <center>
+		<h2>What we do</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+		Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+		Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class='col-sm-4' style="height:400px;">
+	    <center>
+		<h2>Why travel with us!</h2>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+		Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+		Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<p></p>
+	</div>
+	</div>
+	<div class="jumbotron" style='padding:10px;background-color:#424242;color:white;'>
+		<div class="container-fluid" >
+			<div  style="float:left"><center>
+		<p style="color:#fbcf91">contact us</p>
+        <a href="#">
+          <span class="glyphicon glyphicon-envelope"></span></a>
+		   <a href="#">
+          <span class="glyphicon glyphicon-phone"></span>
+        </a>
+		 <a href="#">
+          <span class="glyphicon glyphicon-globe"></span>
+        </a>
+		<a href="#">
+          <span class="glyphicon glyphicon-globe"></span>
+        </a>
+		</center></div>
+
+		</div>
+	</div>
+</body>
+</html>

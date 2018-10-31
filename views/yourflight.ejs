@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>SIGNUP</title>
+ 	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  	<script src="/javascripts/jquery.min.css"></script>
+  	<script src="/javascripts/bootstrap.min.css"></script>
+  	<link rel='icon' type='text/icon' href='/images/a.png'>
+  	<link rel="stylesheet" href="/stylesheets/animate.css">
+  	<link rel='stylesheet' href='/stylesheets/details.css'/>
+</head>
+<body>
+
+
+	<div class="jumbotron wow tada" style='margin-bottom: 0' id='maindiv'>
+		<center><h1 id='main'>These are the flights that you have added as your flights.</h1></center><br>
+	</div>
+
+
+	<%if(flights!==undefined){%>
+		<%flights.forEach(function(flight){%>
+			<div class="container bo" id='content'  style='border-radius: 20px;border:2px solid #7B1FA2' >
+				<div class='col-sm-12'>
+					<center><h1 style='color:red'>Flight No.: <%=flight.request.airline.fsCode%>-<%=flight.request.flight.interpreted%> of 
+						 <%(flight.appendix.airlines).forEach(function(airline){%>
+						 	<%if(airline.fs==flight.request.airline.fsCode){%>
+						 		<%=airline.name%>
+						 	<%}%>
+						 <%});%> on 2018-10-29
+					</h1></center>
+					<br>
+					
+					<center><h1>Journey></h1></center>
+
+					<div class='row wow bounceInLeft'>
+						<%(flight.flightStatuses).forEach(function(fs){%>
+							<div class='row' >
+						 		<div class='col-sm-3'></div>
+						 		<div class='col-sm-6' style='font-size: 24px;'>
+						 			<center>
+						 			<%=fs.departureAirportFsCode%> to  <%=fs.arrivalAirportFsCode%> <br>
+						 			Status : <%=fs.status%><br>
+						 			Duration : <%=fs.flightDurations.scheduledBlockMinutes%><br>
+						 			<%if (fs.airportResources!=undefined){%>
+						 				<%if(fs.airportResources.departureTerminal){%>
+						 				Departure Terminal : <%=fs.airportResources.departureTerminal%><br>
+						 			<%}%>
+						 			<%if(fs.airportResources.arrivalTerminal){%>
+						 				Arrival Terminal : <%=fs.airportResources.arrivalTerminal%><br>
+						 			<%}%>
+						 			<%}%>
+						 			
+						 		</div>
+						 		<div class='col-sm-3'></div>	
+						 	</div>
+						<%})%>
+					</div>
+
+					<center><h1>Airports</h1></center>
+					<p>
+						<%(flight.appendix.airports).forEach(function(airport){%>
+						 	<div class='row wow bounceInLeft' >
+						 		<div class='col-sm-3'></div>
+						 		<div class='col-sm-6' style='font-size: 24px;'>
+						 			<center>
+						 			<%=airport.name%> , 
+						 			<%=airport.city%><br>
+						 			- <%=airport.countryName%><br>
+						 			- <%=airport.regionName%><br><br>
+						 			<a href="/airport/weather/<%=airport.fs%>" class='btn btn-danger'>Get Weather Details</a><br>
+						 			<a href="/airport/nearby/<%=airport.latitude%>,<%=airport.longitude%>" class='btn btn-success'>Search Nearby</a>	</center>
+						 		</div>
+						 		<div class='col-sm-3'></div>
+						 			
+						 	</div>
+						<%});%> 
+					</p>
+
+					</center>
+				</div>
+			</div>	
+		<%});%>
+	<%}%>
+
+<script src='/javascripts/wow.js'></script>
+<script type='text/javascript'>
+new WOW().init();
+</script>
+
+
+</body>
+</html>

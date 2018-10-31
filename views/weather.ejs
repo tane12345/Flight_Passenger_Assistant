@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title><%=weather.appendix.airports[0].name%></title>
+ 	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<link rel='icon' type='text/icon' href='/images/icon.png'>
+</head>
+<body style='background: url("/stylesheets/cloud1.jpg");width:1920px;height:1080px;background-repeat:no-repeat;'>
+	<nav class='navbar navbar-inverse' style='margin-bottom: 0px;border-radius: 0'>
+		<div class="container-fluid">
+			<div class='navbar-header'>
+				<a href='#' class='navbar-brand active'>FlightPassengerAssistant</a>
+				<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbar'>
+					<span class='icon-bar'></span>
+					<span class='icon-bar'></span>
+					<span class='icon-bar'></span>
+				</button>
+			</div>
+			<div class='collapse navbar-collapse' id='navbar'>
+				<ul class='nav navbar-nav navbar-right'>
+					<li><a href="/">Home</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class='container' style='margin-top: 200px;'>
+		<div class='col-sm-3'></div>
+		<div class='col-sm-6' style="margin-left:-35%;color:white;font-size:36px;font-weight:700;border-radius: 5px;padding: 20px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+			<center>
+				Temperature: <%=weather.metar.temperatureCelsius%> Celsius<br>
+				Simple : 
+				<%if(parseInt(weather.metar.temperatureCelsius)<28){%>
+					Cold
+					<br>
+				<%}%>
+				<%if(parseInt(weather.metar.temperatureCelsius)>=28){%>
+					Hot
+					<br>
+				<%}%>
+				Sky Conditions: <%=weather.metar.conditions.skyConditions[0].coverage%><br>
+				Wind: <%=weather.metar.conditions.wind.speedKnots%> Knots
+			</center>
+		</div>
+		<div class='col-sm-3'></div>
+	</div>	
+</body>
+</html>

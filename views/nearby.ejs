@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>Nearby</title>
+ 	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<link rel='icon' type='text/icon' href='/images/icon.png'>
+</head>
+<body>
+	<nav class='navbar navbar-inverse' style='margin-bottom: 0px;border-radius: 0'>
+		<div class="container-fluid">
+			<div class='navbar-header'>
+				<a href='#' class='navbar-brand active'>FlightPassengerAssistant</a>
+				<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbar'>
+					<span class='icon-bar'></span>
+					<span class='icon-bar'></span>
+					<span class='icon-bar'></span>
+				</button>
+			</div>
+			<div class='collapse navbar-collapse' id='navbar'>
+				<ul class='nav navbar-nav navbar-right'>
+					<li><a href="/flight/details">Back</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="jumbotron">
+		<center><h1>Places within 4kms</h1></center><br>
+		<center><%-messages()%></center>
+	</div>
+
+	<div class='container'>
+		<div class="col-sm-12">
+		<center>
+		<ul class="nav nav-tabs">
+		  <li class="active" style='width:16%'><a data-toggle="tab" class='active' href="#rest">Restaurants</a></li>
+		  <li style='width:17%'><a data-toggle="tab" href="#hos">Hotels</a></li>
+		  <li style='width:16%'><a data-toggle="tab" href="#pol">Police</a></li>
+		  <li style='width:17%'><a data-toggle="tab" href="#sho">Shopping Malls</a></li>
+		  <li style='width:16%'><a data-toggle="tab" href="#tax">Taxi Stand</a></li>
+		  <li style='width:17%'><a data-toggle="tab" href="#tra">Train Station</a></li>
+
+		</ul>
+
+		<div class="tab-content">
+		  <div id="rest" class="tab-pane fade in active" style="margin-top: 30px;padding:30px;">
+		    <div class='container'>
+		    	<%if(rest!=undefined){%>
+		    		<%rest.results.forEach(function(res){%>
+		    			<div class="row" style='background-color: #EEEEEE;color:black;;margin-bottom: 10px;border:2px solid black' >
+		    				<div class='col-sm-1'></div>
+		    				<div class='col-sm-1' style="margin-top: 15px;">
+		    					<img  src="<%=res.icon%>" style='width:100%;height:100%;'>
+		    				</div>
+		    				<div class='col-sm-8'>
+		    					<center><h1><%=res.name%></h1></center>
+		    					<h4><b>Rating:</b> <%=res.rating%></h4>
+		    					<h4><b>Address:</b> <%=res.vicinity%></h4>
+		    					<h4><b>Type:</b> <%=res.types[0]%> and <%=res.types[1]%></h4>
+		    					
+
+		    				</div>
+		    				<div class='col-sm-2'></div>
+		    			</div>
+		    		<%});%>
+		    	<%}%>
+		    </div>
+		  </div>
+		  <div id="hos" class="tab-pane fade" style="margin-top: 30px;padding:30px;">
+		    <div class='container'>
+		    	<%if(hos!=undefined){%>
+		    		<%hos.results.forEach(function(res1){%>
+		    			<div class="row" style='background-color: #EEEEEE;color:black;;margin-bottom: 10px;border:2px solid black' >
+		    				<div class='col-sm-1'></div>
+		    				<div class='col-sm-1' style="margin-top: 15px;">
+		    					<img  src="<%=res1.icon%>" style='width:100%;height:100%;'>
+		    				</div>
+		    				<div class='col-sm-8'>
+		    					<center><h1><%=res1.name%></h1></center>
+		    					<h4><b>Rating:</b> <%=res1.rating%></h4>
+		    					<h4><b>Address:</b> <%=res1.vicinity%></h4>
+		    					<h4><b>Category:</b> <%=res1.types[0]%> and <%=res1.types[1]%></h4>
+		    					
+
+		    				</div>
+		    				<div class='col-sm-2'></div>
+		    			</div>
+		    		<%});%>
+		    	<%}%>		
+		    </div>
+		  </div>
+		  <div id="pol" class="tab-pane fade" style="margin-top: 30px;padding:30px">
+		    <div class='container'>
+		    	<%=pol.results[0].name%>
+		    	<%if(pol!=undefined){%>
+		    		<%pol.results.forEach(function(res2){%>
+		    			<div class="row" style='background-color: #EEEEEE;color:black;;margin-bottom: 10px;border:2px solid black' >
+		    				<div class='col-sm-1'></div>
+		    				<div class='col-sm-1' style="margin-top: 15px;">
+		    					<img  src="<%=res2.icon%>" style='width:100%;height:100%;'>
+		    				</div>
+		    				<div class='col-sm-8'>
+		    					<center><h1><%=res2.name%></h1></center>
+		    					<h4><b>Rating:</b> <%=res2.rating%></h4>
+		    					<h4><b>Address:</b> <%=res2.vicinity%></h4>
+		    					<h4><b>Category:</b> <%=res2.types[0]%> and <%=res2.types[1]%></h4>
+		    					
+
+		    				</div>
+		    				<div class='col-sm-2'></div>
+		    			</div>
+		    		<%});%>
+		    	<%}%>
+		    </div>
+		  </div>
+		  <div id="sho" class="tab-pane fade" style="margin-top: 30px;padding:30px">
+		    <div class='container'>
+		    	<%if(sho!=undefined){%>
+		    		<%sho.results.forEach(function(res){%>
+		    			<div class="row" style='background-color: #EEEEEE;color:black;;margin-bottom: 10px;border:2px solid black' >
+		    				<div class='col-sm-1'></div>
+		    				<div class='col-sm-1' style="margin-top: 15px;">
+		    					<img  src="<%=res.icon%>" style='width:100%;height:100%;'>
+		    				</div>
+		    				<div class='col-sm-8'>
+		    					<center><h1><%=res.name%></h1></center>
+		    					<h4><b>Rating:</b> <%=res.rating%></h4>
+		    					<h4><b>Address:</b> <%=res.vicinity%></h4>
+		    					<h4><b>Category:</b> <%=res.types[0]%> and <%=res.types[1]%></h4>
+		    					
+
+		    				</div>
+		    				<div class='col-sm-2'></div>
+		    			</div>
+		    		<%});%>
+		    	<%}%>
+		    </div>
+		  </div>
+		  <div id="tax" class="tab-pane fade" style="margin-top: 30px;padding:30px">
+		    <div class='container'>
+		    	<%if(tax!=undefined){%>
+		    		<%tax.results.forEach(function(res){%>
+		    			<div class="row" style='background-color: #EEEEEE;color:black;;margin-bottom: 10px;border:2px solid black' >
+		    				<div class='col-sm-1'></div>
+		    				<div class='col-sm-1' style="margin-top: 15px;">
+		    					<img  src="<%=res.icon%>" style='width:100%;height:100%;'>
+		    				</div>
+		    				<div class='col-sm-8'>
+		    					<center><h1><%=res.name%></h1></center>
+		    					<h4><b>Rating:</b> <%=res.rating%></h4>
+		    					<h4><b>Address:</b> <%=res.vicinity%></h4>
+		    					<h4><b>Category:</b> <%=res.types[0]%> and <%=res.types[1]%></h4>
+		    					
+
+		    				</div>
+		    				<div class='col-sm-2'></div>
+		    			</div>
+		    		<%});%>
+		    	<%}%>
+		    </div>
+		  </div>
+		  <div id="tra" class="tab-pane fade" style="margin-top: 30px;padding:30px">
+		    <div class='container'>
+		    	<%if(tra!=undefined){%>
+		    		<%tra.results.forEach(function(res){%>
+		    			<div class="row" style='background-color: #EEEEEE;color:black;;margin-bottom: 10px;border:2px solid black' >
+		    				<div class='col-sm-1'></div>
+		    				<div class='col-sm-1' style="margin-top: 15px;">
+		    					<img  src="<%=res.icon%>" style='width:100%;height:100%;'>
+		    				</div>
+		    				<div class='col-sm-8'>
+		    					<center><h1><%=res.name%></h1></center>
+		    					<h4><b>Rating:</b> <%=res.rating%></h4>
+		    					<h4><b>Address:</b> <%=res.vicinity%></h4>
+		    					<h4><b>Category:</b> <%=res.types[0]%> and <%=res.types[1]%></h4>
+		    					
+
+		    				</div>
+		    				<div class='col-sm-2'></div>
+		    			</div>
+		    		<%});%>
+		    	<%}%>
+		    </div>
+		  </div>
+		</div>
+		</center>
+		</div>
+	</div>
+	
+</body>
+</html>
