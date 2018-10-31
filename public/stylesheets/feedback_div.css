@@ -1,0 +1,80 @@
+body {
+	background-color: white; 
+	background-size: 100%;
+}
+
+
+#container {
+	display: none;
+	background: url("/stylesheets/image.jpg");
+
+	font-weight: 700;
+	color: white;
+	margin-top:35px; 
+	border:none; 
+	border-radius: 25px; 
+	height:660px; 
+	width:500px; 
+	margin-left:35%;
+}
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+.closeButton {
+	float: right;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+@font-face {
+font-family: IndieFlower;
+src: url("/stylesheets/fonts/IndieFlower.ttf");
+}
+@font-face {
+font-family: sed;
+src: url("/stylesheets/fonts/Montserrat.ttf");
+}
+
+
+#firstSection {
+	float: left;
+	display: inline;
+	width: 200px;
+}
+
+#secondSection {
+	float: right;
+	width: 200px;
+	display: inline;
+}
+#submit {
+	background-color: green;
+	color: white;
+	text-align: center;
+	width: auto !important;
+}
+
+h1 {
+	font-size:100px !important;
+	font-family: IndieFlower !important;
+}
+
+h2 {
+	font-size:40px !important;
+	font-family: IndieFlower !important;
+}
+
+form {
+	font-family: sed !important;
+	font-weight: normal;
+	color:white;
+	font-size:20px !important;
+	letter-spacing: 3px;	
+}
+

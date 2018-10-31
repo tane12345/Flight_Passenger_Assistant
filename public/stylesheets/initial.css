@@ -1,0 +1,131 @@
+@font-face{
+    src:url('./fonts/sedwick.ttf');
+    font-family: Sedwick;
+}
+
+h1{
+    font-family: Sedwick;
+    color: white !important;
+}
+
+.jumbotron{
+    background-image: url("/images/login.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#button {
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #63C0DF;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+#button:hover {background-color: #3e8e41}
+
+#button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+body {
+	background: url("/stylesheets/gr1.jpg");
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	font-weight:700;
+	color:white;
+}
+a {
+	color:white;
+}
+li {
+	font-size: 25px;
+}
+@font-face {
+font-family: IndieFlower;
+src: url("/stylesheets/fonts/sed.ttf");
+}
+@font-face {
+font-family: Montserrat;
+src: url("/stylesheets/fonts/Montserrat.ttf");
+}
+
+.heading {
+	font-size:20px !important;
+	font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
+.location {
+	font-size:60px !important;
+	font-family: Arial !important;
+}
+form {
+	font-family: Montserrat !important;
+	color:white;
+	font-size:26px !important;
+
+}
+
+#jumbo {
+	background:maroon;
+	color:white;
+}
